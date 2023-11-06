@@ -7,23 +7,49 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.container {
-  min-height: calc(100vh - 70px - 64px);
-}
-
-.catalog {
-  display: flex;
-  flex-direction: row;
-  /* flex-wrap: wrap; */
-  
-}
-
 nav {
   padding: 0 25px
 }
 
+.container {
+  min-height: calc(100vh - 70px - 64px);
+  width: 100%;
+  padding: 0 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.catalog {
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 90vw;
+  align-items: center;
+
+  
+
+
+}
+
 .row {
-  margin: 15px;
+  /* margin: 0 15px; */
+  position: relative;;
+
+}
+
+.card-image img {
+  height: 200px;
+
+
 }
 
 
+.card {
+  height: 100%;
+  width: 150px;
+
+}
