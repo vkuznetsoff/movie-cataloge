@@ -11,6 +11,19 @@ body {
   min-height: calc(100vh - 70px - 64px);
 }
 
+.catalog {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  
+}
+
 nav {
   padding: 0 25px
 }
+
+.row {
+  margin: 15px;
+}
+
+

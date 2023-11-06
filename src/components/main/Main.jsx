@@ -1,8 +1,10 @@
+import Catalog from "./Catalog"
 
-const Main = () => {
+const Main = ({cards}) => {
+  
     return (
-        <div className="content container">
-        Main
+        <div className="container content">
+        <Catalog cards={cards} />
         </div>
     )
 }
