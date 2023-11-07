@@ -1,12 +1,14 @@
-import Catalog from "./Catalog"
+import { Preloader } from '../Preloader'
+import { Search } from '../Search'
+import Catalog from './Catalog'
 
-const Main = ({cards}) => {
-  
-    return (
-        <div className="container content">
-        <Catalog cards={cards} />
-        </div>
-    )
+const Main = ({ cards, changeTitle }) => {
+  return (
+    <main className='container content'>
+      <Search changeTitle={changeTitle} />
+      {!cards.length || !cards ? <Preloader /> : <Catalog cards={cards} />}
+    </main>
+  )
 }
 
-export  default Main
+export default Main
