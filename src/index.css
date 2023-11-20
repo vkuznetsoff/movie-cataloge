@@ -49,3 +49,17 @@ nav {
   /* margin: 10px; */
   /* min-height: max-content;  */
 }
+
+.search-btn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+}
+
+.filter-form {
+  align-self: center;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 15px;
+  border-bottom: 1px solid lightgray;
+}

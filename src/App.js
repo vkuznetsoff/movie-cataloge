@@ -9,19 +9,32 @@ const URL = 'http://www.omdbapi.com/?'
 function App() {
   const [cards, setCards] = useState(() => [])
   const [title, setTitle] = useState('matrix')
-  useEffect(() => {
-    fetch(`${URL}apikey=${API_KEY}&s=${title}&page=1`)
+  const [loading, setLoading] = useState(true)
+
+  const search = (title, type = 'all') => {
+    const requestType = type !== 'all' ? `&type=${type}` : ``
+
+    fetch(`${URL}apikey=${API_KEY}&s=${title}&page=1${requestType}`)
       .then((response) => response.json())
       .then((data) => {
         // console.log('cards1: ', data.Search)
         setCards(data.Search)
+        setLoading(false)
       })
+  }
+  useEffect(() => {
+    search(title)
   }, [title])
 
   return (
     <div className='App'>
       <Header />
-      <Main cards={cards} changeTitle={setTitle} />
+      <Main
+        cards={cards}
+        changeTitle={setTitle}
+        search={search}
+        loading={loading}
+      />
 
       <Footer />
     </div>

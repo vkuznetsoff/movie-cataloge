@@ -1,12 +1,13 @@
 import { useState } from 'react'
+import '../index.css'
 
-export const Search = ({ changeTitle }) => {
+export const Search = ({ changeTitle, search, filter }) => {
   const [input, setInput] = useState('')
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       changeTitle(input)
-      console.log('input', input)
+      search(input, filter)
     }
   }
 
@@ -25,6 +26,15 @@ export const Search = ({ changeTitle }) => {
             }}
             onKeyDown={(e) => handleKeyDown(e)}
           />
+          <button
+            className='waves-effect waves-light btn-small search-btn'
+            onClick={() => {
+              changeTitle(input)
+              search(input, filter)
+            }}
+          >
+            Search
+          </button>
           {/* <label for='email_inline'>Email</label> */}
           {/* <span className='helper-text' data-error='wrong' data-success='right'>
             Helper text
