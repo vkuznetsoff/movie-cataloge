@@ -3,7 +3,8 @@ import Footer from './components/footer/Footer'
 import Header from './components/header/Header'
 import Main from './components/main/Main'
 
-const API_KEY = 'ab43d87b'
+// const API_KEY = 'ab43d87b'
+const API_KEY = process.env.REACT_APP_API_KEY
 const URL = 'http://www.omdbapi.com/?'
 
 function App() {
