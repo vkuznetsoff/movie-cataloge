@@ -5,7 +5,7 @@ import Main from './components/main/Main'
 
 // const API_KEY = 'ab43d87b'
 const API_KEY = process.env.REACT_APP_API_KEY
-const URL = 'http://www.omdbapi.com/?'
+const URL = 'https://www.omdbapi.com/?'
 
 function App() {
   const [cards, setCards] = useState(() => [])
@@ -20,6 +20,10 @@ function App() {
       .then((data) => {
         // console.log('cards1: ', data.Search)
         setCards(data.Search)
+        setLoading(false)
+      })
+      .catch((err) => {
+        console.error('Loading error: ', err)
         setLoading(false)
       })
   }
